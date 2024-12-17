@@ -1,0 +1,44 @@
+* {
+    /* default one  */
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+.page-actions-container {
+    height: 3rem;
+    background-color: #218c74;
+    display: flex;
+    align-items: flex-end;
+}
+.page-actions {
+    margin: 0.5rem;
+    color: #f1f2f6;
+
+}
+
+.cellprops-action-container {
+    height: 3rem;
+    background-color: red;
+}
+
+.formula-actions-container {
+    height: 3rem;
+    background-color: lightcyan;
+}
+
+.sheet-container {
+    height: 3rem;
+    background-color: lightseagreen;
+}
+
+.grid-container {
+
+    /* here after giving 3 rem to each div above, now giving the remaining space available on teh UI
+    by subtracting them from the complete view port using calc() function  */
+    height: calc(100vh - 3rem - 3rem - 3rem - 3rem);
+}
