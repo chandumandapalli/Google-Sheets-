@@ -24,5 +24,16 @@ Features Covered
 
 - First always have a static structure being built and draw a image ( drawing ) for better visualization and understanding. 
 
-- 
+-  Build google Sheets complete UI layout 
+ - it is always recommended to build HTML+  CSS for any website . 
+ - functionality can be dealt later.  
+    - After creating respective folder for styles and script link them in the HTML file
+    - 
+for Icons 
+    - google material fonts . 
+    
+
+
+
+
 
