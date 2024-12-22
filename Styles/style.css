@@ -10,10 +10,11 @@ body {
 
 
 .page-actions-container {
-    height: 3rem;
+    height: 2.5rem;
     background-color: #218c74;
     display: flex;
     align-items: flex-end;
+    padding-left: 0.5rem;
 }
 .page-actions {
     margin: 0.5rem;
@@ -23,18 +24,98 @@ body {
 
 .cellprops-action-container {
     height: 3rem;
-    background-color: red;
+    background-color:#ecf0f1 ;
+    display: flex;
+    align-items: center;
 }
+
+/* all the things present inside cellprops-action-container should hve this applicable */
+.cellprops-action-container > * {
+    /* to adjust height  and width of the span elements we need to have display:  inline-block ; */
+    display: inline-block;
+    margin: 0.5rem;
+
+}
+
+.cellprops-action-container > select {
+    border: none;
+    border-radius: 0.5rem;
+    /* Outline stops the black line on the select dropdown when selected  */
+    outline: none;
+}
+
+
+.font-family-prop {
+    padding: 0.2rem;
+}
+
+.font-size-prop {
+    padding: 0.2rem;
+}
+.formula-actions-container > * {
+    display: inline-block;
+}
+
+.formula-actions-container > input {
+    /* Every input element by default comes wth border so as per the requirement making it None */
+    border: none;
+    outline: none;
+}
+
+.address-bar {
+    width: 5rem;
+    margin-right: 0.5rem;
+}
+.formula-bar {
+    width: calc(100vw - 5rem);
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
 
 .formula-actions-container {
     height: 3rem;
     background-color: lightcyan;
+    padding-left: 1rem;
+    display: flex;
+    align-items: center;
 }
 
-.sheet-container {
+.sheet-actions-container {
     height: 3rem;
-    background-color: lightseagreen;
+    background-color: #ecf0f1;
+    display: flex;
+    align-items: center;
 }
+.sheet-actions-container > * {
+    display: inline-block;
+}
+
+.sheets-folder-container {
+    height: 80%;
+    background-color: #ecf0f1;
+    display: flex;
+    align-items: center;
+    width: calc(100vw - 2vw);
+}
+
+.sheet-add-icon {
+   width: 3vw;
+   padding: 0.5rem;
+}
+
+
+.sheet-folder {
+    text-decoration: underline;
+    font-weight: bold;
+    text-decoration-thickness: 2px;
+    font-size: 0.9rem;
+
+}
+
+
+
+
 
 .grid-container {
 
