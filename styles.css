@@ -1,0 +1,252 @@
+/* The active selection is a CSS rule that applies the box-sizing: border-box property to all elements on the webpage. 
+The asterisk (*) is a universal selector, meaning it targets every element in the document.
+
+By default, the box-sizing property is set to content-box, which means that the width and height of an element are
+ calculated only based on the content, excluding padding and border. However, when box-sizing is set to border-box, 
+ the width and height of an element include the content, padding, and border. This makes it easier to manage the size of elements, as you don't need to account for padding and border separately.
+
+Using box-sizing: border-box universally helps create a more predictable and consistent layout, as the total size of
+ elements will not change when padding or borders are added. This approach is commonly used in modern web design to 
+ simplify the box model calculations and avoid layout issues. */
+*{
+    box-sizing: border-box;
+}
+
+/* The following CSS rule sets the margin and padding of the body element to 0, effectively removing any default
+ spacing applied by the browser.*/
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.page-action-container{
+    height: 3rem;
+    background-color: #218c74;
+    /* lets all of the page actions to be displayed in a row */
+    display: flex;
+}
+.page-action{
+    padding: 0.5rem;
+    margin: 0.5rem;
+    color: white;
+}
+.cellprops-action-container{
+    height: 3rem;
+    background-color: #ecf0f1;
+    display: flex;
+    /* aligns the items in the center */
+    align-items: center;
+    /* justify the content in the center */
+    /* justify-content: center; */
+    /* flex-wrap property specifies whether the flex items are forced into a single line or can be wrapped onto multiple lines. */
+    flex-wrap: wrap;
+    /* flex-direction property specifies the direction of the flexible items. */
+    flex-direction: row;
+    /* gap property specifies the gap between the rows and columns. */
+    /* gap: 0.5rem; */
+    /* padding property sets the padding area on all four sides of an element. */
+    padding: 0.5rem;
+    /* margin property sets the margin area on all four sides of an element. */
+    /* margin: 0.5rem; */
+    /* border-radius property defines the radius of the element's corners. */
+    /* border-radius: 0.5rem; */
+}
+/* The active selection is a CSS rule that targets all direct child elements of an element with 
+the class cellprops-action-container. The > symbol is a child combinator, which means that only the
+ immediate children of the .cellprops-action-container element will be affected by this rule.
+the class cellprops-action-container. The > symbol is a child combinator, which means that only the
+ immediate children of the .cellprops-action-container element will be affected by this rule.
+
+The display property is set to inline-block for these child elements. The inline-block 
+value allows the elements to be laid out in a line, like inline elements, but also allows 
+them to have width and height properties, like block elements. This is useful for creating a horizontal 
+layout while still being able to control the dimensions of each element.
+
+The margin property is set to 0.5rem. The margin property adds space around the elements,
+ outside of their borders. By setting it to 0.5rem, each child element will have a margin of 0.5 rem
+  units on all sides. This creates consistent spacing between the elements, ensuring they are not 
+  too close to each other.
+
+Overall, this CSS rule is used to create a neatly spaced, horizontally aligned layout 
+for the child elements of the .cellprops-action-container element, making the design more
+ visually appealing and organized. */
+ /* https://developer.mozilla.org/en-US/docs/Web/CSS/display */
+ .cellprops-action-container > * {
+   display: inline-block;
+    margin: 0.5rem;
+    align-items: center;
+   
+}
+#font-size , #font-family {
+    border-radius: 0.5rem;
+    padding: 0.2rem; 
+    border: 1px solid black;
+    outline: none;
+}
+.formula-actions-container{
+    height: 2rem;
+    background-color: #ecf0f1;
+    display: flex;
+    align-items: center;
+}
+.formula-actions-container > *{
+    display: inline-block;
+    margin: 0.3rem;
+}
+.formula-actions-container > input{
+    /* border-radius: 0.5rem; */
+    padding: 0.2rem;
+   border: none;
+   /* outline: none;  is set when clickedon the elment and still no outline has to come  */
+    outline: none; 
+}
+.formula-icon{
+    width: 1.2rem;
+    height: 1.2rem;
+}
+.address-bar {
+    width: 5rem;
+}
+.formula-bar {
+    width: calc(100vw - 5rem);
+}
+
+
+
+.grid-container{
+    /* grid takes the remaining height of the viewport */
+    height: calc(100vh - 10rem);
+    /* display: grid allows us to use the CSS Grid layout to create a two-dimensional grid of items. */
+    /* display: grid; */
+    /*position relative is being added to let the grid-container to be the parent of the grid  ie. to be 
+    cells-container inside the grid-container else it would have been the body of the html */ 
+    position: relative;
+   /* Here overflow when givenwith this scroll value as we have given certain height and width to the containers
+   if the text content produced by the dom is overflowing the screen then it introduces the scroll to aovid that overflow
+   and shows complete content that DOM has given .. and also overflow has another property called hide which hides the 
+   overflow content showing only what screen can fit into . */
+    overflow: scroll;
+    background-color: #ecf0f1;
+
+}
+.top-left-dummy-box {
+    height: 2rem;
+    width: 2rem;
+    background-color: #747d8c;
+    /* dummy box gets fixed to the top left corner of the grid-container irrespective of the scroll */
+    position: fixed;
+    /* now the dummy box is fixed to the top left corner of the viewport  so that any alpha or numbers wont be visilbe on 
+    the dummy box when scrolled right , 
+    position is required to apply z-index else it wont get applied */ 
+    z-index: 1;
+    /* top: 0; */
+    /* left: 0; */
+}
+.address-col-cont {
+    /* helps to stick the address column to the top of the grid-container  when scrolled right */
+    position: sticky;
+    top: 2rem;
+    left: 0;
+   
+}
+.cells-cont {
+    position: absolute;
+    top:0;
+    left: 2rem;
+   
+
+}
+.address-row-cont {
+    height: 2rem;
+    display: flex;
+    /* so that A,B... even though scrolled down will stay sticky on the top of the grid-container */
+    position:sticky;
+    top: 0;
+    left: 2rem;
+}
+
+.address-col {
+    width: 2rem;
+    text-align: center;
+    height: 2rem;
+    border: 1px solid #dfe4ea;
+}
+.address-row {
+    width: 5rem;
+    text-align: center;
+    height: 2rem;
+    border: 1px solid #dfe4ea;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cell {
+    width: 5rem;
+    height: 2rem;
+    border: 1px solid #dfe4ea;
+    outline: none;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    /* padding: 0.5rem; */
+}
+.row-cont{
+    display: flex;
+    
+}
+.sheet-container{
+    height: 2rem;
+    background-color: #ecf0f1;
+    display: flex;
+    align-items: center;
+    /* the div present in the flex wil hve a gap of 0.5rem between them  */
+    gap: 0.3rem;
+}
+.sheet-container > * {
+    /* The display: inline-block property is used to combine characteristics of both inline and block elements. Here's why you might add it:
+
+    Inline Behavior:
+    
+    The element will flow inline with other elements, meaning it won't start on a new line like a block element would.
+    This is useful when you want the element to align with other inline elements, such as text or images.
+    Block-Like Features:
+    
+    Unlike inline elements, you can set dimensions (width, height) on an inline-block element.
+    Margins and paddings are respected in all directions, making it easier to control spacing.
+    Use Case:
+    
+   
+ It is often used for elements like buttons, navigation links, or custom inline layouts where you need both inline alignment and the ability to style the element with block-like properties.
+*/
+ display: inline-block; 
+    margin: 0.5rem;
+}
+.sheet-add-icon {
+    margin-right: 0.1rem;
+    width: 2vw;
+}
+
+.sheet-folder-container {
+    height: 80%;
+    /* adding width is necessary to display the folder name in a row */
+    width: 5rem;
+    /* background-color: lightyellow; */
+    /*here using display flex and align-items at the bottom  to align the sheet-folder and sheet-folder-icon in a row */ ;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+   
+    width: calc(100vw - 2vw);
+    
+}
+
+.sheet-folder {
+    text-decoration: underline;
+    margin-left: 0.5rem;
+    font-weight: bold;
+    text-decoration-thickness: 0.1rem;
+   
+}
+
+
+

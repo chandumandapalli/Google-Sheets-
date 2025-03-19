@@ -1,28 +1,10 @@
-# Google-Sheets- in JS . 
+1. Building     Google sheets complete UI layout 
+    - Building structure is the initial step.. 
+    - Divide the UI into simple and small components to build them better and more understanding . ( img-1-outline.png) 
+            - First Row -- File Actions  ( file , Home, insert , layout , Help)
+            - Second Row -- ( Cell Properties ) ( copy, paste, cut , bold, italic, center left right alignment, text color , )
+            - third Row - Address Bar ( Formula )
+            - Body - Sheets ( Cells Grid )
+            - Footer - Sheets info and add more sheets info . ( sheets folder )
 
-Features Covered 
-    -Heavy CSS
-    -Heavy DOM
-    -Manipulation in both UI & Storage ( Cell Properties)
-       - Two way binding
-    -Formula Evaluation 
-    - Graph Algorithm  -- Cycle Detection in Directed Graph 
-        -Formula Cycle Validation 
-        -Cycle Validation Color Tracking 
-    Storage Manipulation
-        -Multiple Sheet handling 
-        -New, Open , Download sheets
-    -Cut, Copy , Paste in Multiple Cells
-
-
-
-
-
-
-- At present  the sheet has 100 rows at first glance 
-- later another rows can be added externally 
-
-- First always have a static structure being built and draw a image ( drawing ) for better visualization and understanding. 
-
-- 
-
+    - Building static UI layout using HTML , CSS . 
